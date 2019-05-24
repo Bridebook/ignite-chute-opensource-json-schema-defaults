@@ -213,7 +213,7 @@ describe('defaults', function() {
     });
   });
 
-  it('returns empty array when items are not present', function() {
+  it('returns undefined when items are not present', function() {
     expect(
       defaults({
         type: 'object',
@@ -223,12 +223,10 @@ describe('defaults', function() {
           },
         },
       })
-    ).toEqual({
-      albums: [],
-    });
+    ).toEqual(undefined);
   });
 
-  it('returns empty array when no defaults set', function() {
+  it('returns undefined when no defaults set', function() {
     expect(
       defaults({
         type: 'array',
@@ -236,7 +234,7 @@ describe('defaults', function() {
           type: 'string',
         },
       })
-    ).toEqual([]);
+    ).toEqual(undefined);
   });
 
   it('returns array with min items', function() {
